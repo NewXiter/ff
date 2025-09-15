@@ -1012,7 +1012,9 @@
                 notificacao.remove();
             }, 5000);
         }
-
+// Atualizar contador
+        this.incrementSalesCounter();
+      }
         function loopNotificacoes() {
             mostrarNotificacao();
             const tempo = Math.floor(Math.random() * 7000) + 8000;
