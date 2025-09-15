@@ -993,7 +993,21 @@
             notificacao.className = "notificacao";
             notificacao.innerHTML = `<i class="bi bi-check-circle" style="margin-right: 8px;"></i> ${mensagem}`;
             document.getElementById("notificacoes").appendChild(notificacao);
-
+            
+   // Atualizar contador de vendas
+        this.updateSalesCounter();
+      }
+      
+      scheduleNextNotification() {
+        if (!this.isActive) return;
+        
+        const delay = Math.random() * 7000 + 8000; // 8-15 segundos
+        setTimeout(() => {
+          this.showNotification();
+          this.scheduleNextNotification();
+        }, delay);
+      }
+      
             setTimeout(() => {
                 notificacao.remove();
             }, 5000);
@@ -1034,7 +1048,7 @@
           'Mariana Dias', 'Bruno Nascimento', 'Isabela Cardoso', 'Diego Araújo', 'Amanda Correia',
           'Mateus Teixeira', 'Natália Monteiro', 'Vinicius Castro', 'Letícia Moreira', 'André Fonseca',
           'Bruna Cavalcanti', 'Guilherme Pinto', 'Yasmin Nunes', 'Leonardo Freitas', 'Stephanie Ramos'
-       
+        
         
         // Produtos disponíveis
         this.products = [
