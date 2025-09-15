@@ -980,20 +980,12 @@
 
     <!-- Sistema de notificações -->
     <script>
-        // Sistema simples de notificações
-        const nomes = ["Fabinho", "Adriano", "Athur", "Marcos", "Isabelle", "Bella", "Ana", "Vitor", "Rafael", "Matheus", "Juliana", "Rafaela", "kauane", "João Silva", "Maria Santos", "Pedro Oliveira", "Ana Costa", "Carlos Souza", "Fernanda Lima", "Gabriel Alves", "Juliana Ferreira", "Rafael Martins", "Camila Rocha", "Lucas Pereira", "Beatriz Carvalho", "Thiago Ribeiro", "Larissa Gomes", "Felipe Barbosa", "Mariana Dias", "Bruno Nascimento", "Isabella", "Diego Araújo", "Amanda", "Mateus Teixeira", "Natália Monteiro", "Vinicius Castro", "Letícia", "André Fonseca", "Bruna Cavalcanti", "Guilherme Pinto", "Yasmin Nunes", "Leonardo Freitas", "Stephanie Ramos"];
-        const acoes = ["Aproveitou a Promoção", "Comprou Painel xit", "Acabou de adquirir Painel CLT", "Realizou uma Compra de R$49,90", "Realizou uma Compra de R$29,90", "Confirmou o Pagamento de R$29,90", "Usou CUPOM: New sensi"];
-
-        function mostrarNotificacao() {
-            const nome = nomes[Math.floor(Math.random() * nomes.length)];
-            const acao = acoes[Math.floor(Math.random() * acoes.length)];
-            const mensagem = `${nome} ${acao}`;
-
-            const notificacao = document.createElement("div");
-            notificacao.className = "notificacao";
-            notificacao.innerHTML = `<i class="bi bi-check-circle" style="margin-right: 8px;"></i> ${mensagem}`;
-            document.getElementById("notificacoes").appendChild(notificacao);
-            
+          class PurchaseNotificationSystem {
+      constructor() {
+        this.container = document.getElementById('notification-container');
+        this.salesCounter = document.getElementById('sales-count');
+        this.currentSales = 127;
+        this.isActive = true;
    // Atualizar contador de vendas
         this.updateSalesCounter();
       }
@@ -1020,6 +1012,21 @@
             const tempo = Math.floor(Math.random() * 7000) + 8000;
             setTimeout(loopNotificacoes, tempo);
         }
+        
+        // Sistema simples de notificações
+        const nomes = ["Fabinho", "Adriano", "Athur", "Marcos", "Isabelle", "Bella", "Ana", "Vitor", "Rafael", "Matheus", "Juliana", "Rafaela", "kauane", "João Silva", "Maria Santos", "Pedro Oliveira", "Ana Costa", "Carlos Souza", "Fernanda Lima", "Gabriel Alves", "Juliana Ferreira", "Rafael Martins", "Camila Rocha", "Lucas Pereira", "Beatriz Carvalho", "Thiago Ribeiro", "Larissa Gomes", "Felipe Barbosa", "Mariana Dias", "Bruno Nascimento", "Isabella", "Diego Araújo", "Amanda", "Mateus Teixeira", "Natália Monteiro", "Vinicius Castro", "Letícia", "André Fonseca", "Bruna Cavalcanti", "Guilherme Pinto", "Yasmin Nunes", "Leonardo Freitas", "Stephanie Ramos"];
+        const acoes = ["Aproveitou a Promoção", "Comprou Painel xit", "Acabou de adquirir Painel CLT", "Realizou uma Compra de R$49,90", "Realizou uma Compra de R$29,90", "Confirmou o Pagamento de R$29,90", "Usou CUPOM: New sensi"];
+
+        function mostrarNotificacao() {
+            const nome = nomes[Math.floor(Math.random() * nomes.length)];
+            const acao = acoes[Math.floor(Math.random() * acoes.length)];
+            const mensagem = `${nome} ${acao}`;
+
+            const notificacao = document.createElement("div");
+            notificacao.className = "notificacao";
+            notificacao.innerHTML = `<i class="bi bi-check-circle" style="margin-right: 8px;"></i> ${mensagem}`;
+            document.getElementById("notificacoes").appendChild(notificacao);
+            
 
         window.onload = () => {
             loopNotificacoes();
@@ -1061,7 +1068,15 @@
         
 
 
-
+ // Cidades brasileiras
+        this.cities = [
+          'São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Salvador', 'Brasília',
+          'Fortaleza', 'Curitiba', 'Recife', 'Porto Alegre', 'Manaus',
+          'Belém', 'Goiânia', 'Guarulhos', 'Campinas', 'São Luís',
+          'Maceió', 'Duque de Caxias', 'Natal', 'Teresina', 'São Bernardo',
+          'Nova Iguaçu', 'João Pessoa', 'Santos', 'Ribeirão Preto', 'Uberlândia'
+        ];
+        
 
 
 
