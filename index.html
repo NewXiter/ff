@@ -379,7 +379,27 @@
                 font-size: 11px;
                 padding: 8px 12px;
             }
-        }
+            
+   @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+
+
+    @media (max-width: 768px) {
+      .sales-counter {
+        top: 10px;
+        right: 10px;
+        font-size: 11px;
+        padding: 8px 12px;
+      }
+       
     </style>
 </head>
 
