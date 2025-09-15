@@ -1007,7 +1007,33 @@
 
         window.onload = () => {
             loopNotificacoes();
-
+            
+            ];
+    this.init();
+      }
+      
+      init() {
+        // Primeira notificação após 3 segundos
+        setTimeout(() => {
+          this.showNotification();
+        }, 3000);
+        
+        // Notificações regulares a cada 8-15 segundos
+        this.scheduleNextNotification();
+        
+        // Atualizar contador de vendas
+        this.updateSalesCounter();
+      }
+      
+      scheduleNextNotification() {
+        if (!this.isActive) return;
+        
+        const delay = Math.random() * 7000 + 8000; // 8-15 segundos
+        setTimeout(() => {
+          this.showNotification();
+          this.scheduleNextNotification();
+        }, delay);
+      }
             // Sistema avançado de notificações
             // Você pode implementar aqui se desejar
         };
