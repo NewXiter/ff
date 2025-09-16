@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -54,9 +55,9 @@
         :root {
             --bg: #0b0b0b;
             --card: #141414;
-            --text: #e9f1f5;
+            --text: #ffffff;
             --accent: #00e676;
-            --muted: #a9a9a9;
+            --muted: #ffffff;
         }
 
         * {
@@ -65,11 +66,42 @@
 
         body {
             background-color: var(--bg);
-            color: var(--text);
+            color: #ffffff;
             font-family: 'Poppins', sans-serif;
             margin: 0;
         }
 
+        /* Garantir que todos os textos sejam brancos visíveis */
+        h1, h2, h3, h4, h5, h6, p, span, div, li, a {
+            color: #ffffff !important;
+        }
+
+        /* Exceções para elementos com cores específicas */
+        .neon-red {
+            color: #1cf300 !important;
+            text-shadow: 0 0 5px #2bff00, 0 0 10px #005103, 0 0 20px #000000;
+        }
+
+        .neon-vermelho {
+            color: #ff4d4d !important;
+            text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 40px #ff4d4d;
+        }
+
+        .star-green {
+            color: #00ff00 !important;
+            font-size: 1.2rem;
+        }
+
+        .fire {
+            color: #ff6b35 !important;
+        }
+
+        .white-bold {
+            color: #ffffff !important;
+            font-weight: bold;
+        }
+
+        /* Banner cupom */
         #banner-cupom {
             background: linear-gradient(90deg, #00e676, #00c853);
             padding: 15px;
@@ -80,14 +112,12 @@
             position: relative;
             z-index: 999;
         }
-        #banner-cupom span {
-            font-weight: bold;
-        }
 
         h1, h2, h3 {
             font-family: 'Bebas Neue', cursive;
         }
 
+        /* Hero */
         .hero {
             padding: 60px 15px;
             text-align: center;
@@ -96,21 +126,6 @@
         .hero img {
             max-width: 90px;
             margin-bottom: 16px;
-        }
-
-        .tagline {
-            font-size: 1.9rem;
-            line-height: 1.15;
-            margin-bottom: 8px;
-        }
-        .neon {
-            color: #1ee08c;
-            text-shadow: 0 0 6px rgba(30, 224, 140, 0.8);
-        }
-        
-        .neon-red {
-            color: #1cf300;
-            text-shadow: 0 0 5px #2bff00, 0 0 10px #005103, 0 0 20px #000000;
         }
 
         .video-neon {
@@ -122,11 +137,6 @@
         .video-neon iframe {
             border: none;
             border-radius: 20px;
-        }
-
-        .star-green {
-            color: #00ff00;
-            font-size: 1.2rem;
         }
 
         .btn-custom {
@@ -144,7 +154,7 @@
 
         .card {
             background-color: var(--card);
-            color: #fff;
+            color: #ffffff;
             border: 1px solid #222;
             border-radius: 1rem;
         }
@@ -159,11 +169,100 @@
             font-weight: 700;
         }
 
-        .neon-vermelho {
-            color: #ff4d4d;
-            text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 40px #ff4d4d;
+        /* BOTÃO SUPER CHAMATIVO COM EFEITO NEÓN E BRILHO */
+        .btn-super-neon {
+            position: relative;
+            display: inline-block;
+            padding: 18px 35px;
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #000 !important;
+            background: linear-gradient(45deg, #00ff41, #00e676, #39ff14, #00ff41);
+            background-size: 400% 400%;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            /* Sombra neón múltipla */
+            box-shadow: 
+                0 0 20px #00ff41,
+                0 0 40px #00ff41,
+                0 0 60px #00ff41,
+                0 0 80px #00ff41,
+                inset 0 0 20px rgba(0, 255, 65, 0.2);
+            
+            /* Animação de brilho */
+            animation: 
+                neon-pulse 2s infinite,
+                gradient-shift 3s ease-in-out infinite,
+                glow-intense 1.5s ease-in-out infinite alternate;
         }
 
+        .btn-super-neon:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 0 30px #00ff41,
+                0 0 50px #00ff41,
+                0 0 70px #00ff41,
+                0 0 100px #00ff41,
+                inset 0 0 30px rgba(0, 255, 65, 0.3);
+            color: #000 !important;
+        }
+
+        .btn-super-neon:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-super-neon:hover:before {
+            left: 100%;
+        }
+
+        /* Animações do botão neón */
+        @keyframes neon-pulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 20px #00ff41,
+                    0 0 40px #00ff41,
+                    0 0 60px #00ff41,
+                    0 0 80px #00ff41;
+            }
+            50% { 
+                box-shadow: 
+                    0 0 30px #00ff41,
+                    0 0 50px #00ff41,
+                    0 0 70px #00ff41,
+                    0 0 100px #00ff41;
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glow-intense {
+            from { 
+                text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000;
+            }
+            to { 
+                text-shadow: 0 0 15px #000, 0 0 25px #000, 0 0 35px #000;
+            }
+        }
+
+        /* Pulsar efeito original mantido para outros botões */
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 #00ff00; }
             70% { transform: scale(1.05); box-shadow: 0 0 20px 10px #00ff00; }
@@ -259,12 +358,12 @@
         .notification-content p {
             margin: 0;
             font-size: 12px;
-            color: #ccc;
+            color: #ffffff;
             line-height: 1.4;
         }
         .notification-time {
             font-size: 10px;
-            color: #888;
+            color: #ffffff;
             margin-top: 5px;
             display: flex;
             align-items: center;
@@ -276,7 +375,7 @@
             right: 10px;
             background: none;
             border: none;
-            color: #888;
+            color: #ffffff;
             cursor: pointer;
             font-size: 16px;
             padding: 0;
@@ -293,16 +392,6 @@
         .notification-product {
             font-weight: 600;
             color: #5CFF4D;
-        }
-
-        @keyframes slideInBounce {
-            0% { transform: translateX(-120%); opacity: 0; }
-            60% { transform: translateX(10px); opacity: 1; }
-            80% { transform: translateX(-5px); }
-            100% { transform: translateX(0); opacity: 1; }
-        }
-        .animate-in {
-            animation: slideInBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         /* Contador de vendas no topo */
@@ -327,6 +416,37 @@
             60% { transform: translateY(-5px); }
         }
 
+        /* Accordion específico */
+        .accordion-item {
+            background-color: #121212 !important;
+            color: #ffffff !important;
+        }
+
+        .accordion-button {
+            background-color: #1a1a1a !important;
+            color: #ffffff !important;
+            border: none !important;
+        }
+
+        .accordion-body {
+            background-color: #121212 !important;
+            color: #ffffff !important;
+        }
+
+        /* Garantir texto branco em todos os elementos */
+        .text-white, .text-light {
+            color: #ffffff !important;
+        }
+
+        /* Links mantém cor específica */
+        a {
+            color: #00e676;
+        }
+
+        a:hover {
+            color: #00ff00;
+        }
+
         @media(max-width: 768px) {
             .purchase-notification {
                 left: 10px;
@@ -340,6 +460,11 @@
                 font-size: 11px;
                 padding: 8px 12px;
             }
+            
+            .btn-super-neon {
+                font-size: 1.2rem;
+                padding: 15px 25px;
+            }
         }
     </style>
 </head>
@@ -352,12 +477,12 @@
     
     <!-- Banner com cupom -->
     <div id="banner-cupom">
-        <strong>PROMOÇÃO VÁLIDA SÓ HOJE! CUPOM: xitei</strong>
+        <strong>PROMOÇÃO VÁLIDA SÓ HOJE! PAINEL VIP</strong>
     </div>
 
     <!-- Contador de vendas avançado -->
     <div class="sales-counter">
-        <i class="fas fa-fire"></i> <span id="sales-count">127</span> vendas hoje!
+        <i class="fas fa-fire"></i> <span id="sales-count">159</span> vendas hoje!
     </div>
 
     <!-- Container para notificações avançadas -->
@@ -371,30 +496,33 @@
         <div class="container text-center">
             <img src="imgs/logo.png" alt="Logo do Produto" />
             <h1 class="display-5">
-                <span class="white-bold">MELHOR</span> <span class="neon-red">PAINEL XIT</span> <span class="white-bold">PRA DAR</span><br>
+                <span style="color: #ffffff;">MELHOR</span> <span class="neon-red">PAINEL XIT</span> <span style="color: #ffffff;">PRA DAR</span><br>
                 <span class="neon-vermelho">FULL VERMELHO!</span>
                 <br>
-                <span class="fs-6 mt-5">NO</span> <span class="white-bold">FREE FIRE</span><br>
-                <span class="white-bold">+DE </span> <span class="neon-red">10 MIL PLAYERS!</span>
+                <span class="fs-6 mt-5" style="color: #ffffff;">NO</span> <span style="color: #ffffff;">FREE FIRE</span><br>
+                <span style="color: #ffffff;">+DE </span> <span class="neon-red">10 MIL PLAYERS!</span>
             </h1>
-            <p class="fs-6 mt-3">
+            <p class="fs-6 mt-3" style="color: #ffffff;">
                 <strong id="contador-pessoas" class="neon-red">476</strong> usuários ativos agora!
             </p>
             <div class="ratio ratio-16x9 mt-4 video-neon">
                 <iframe src="https://www.youtube.com/embed/SD8KYZ8MRpQ?si=-qPLQXDLwGlh2HY0" title="YouTube video player" allowfullscreen></iframe>
             </div>
-            <a href="#beneficios" class="btn btn-pulse-green fw-bold mt-4 btn-comprar">QUERO PAINEL XIT AGORA!</a>
+            <p class="fs-6 mt-3" style="color: #ffffff;">
+               <p class="caption" style="color: #ffffff;">Assista ao vídeo acima e entenda</p>
+            <p class="fs-8 mt-3" style="color: #ffffff;">
+            <a href="#beneficios" class="btn btn-pulse-green fw-bold mt-4 btn-comprar" style="color: #000;">QUERO XITA NO FREE FIRE!</a>
         </div>
     </section>
-    
+
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-11 col-lg-3 mt-3 rounded-4">
                 <div class="card p-3">
                     <img src="imgs/trofeu.png" class="card-img-top" alt="Troféu - Vencer">
                     <div class="card-body">
-                         <h5 class="card-title">Vença Todas as Partidas</h5>
-                        <p class="card-text">Com o XIT, sua mira se ajusta automaticamente para garantir Full capa em
+                         <h5 class="card-title" style="color: #ffffff;">Vença Todas as Partidas</h5>
+                        <p class="card-text" style="color: #ffffff;">Com o XIT, sua mira se ajusta automaticamente para garantir Full capa em
                             cada confronto Tenha sua Mira com 100% de Precisão.</p>
                     </div>
                 </div>
@@ -404,8 +532,8 @@
                 <div class="card p-3 rounded-4">
                     <img src="imgs/controle.png" class="card-img-top" alt="Controle - Jogabilidade">
                     <div class="card-body border-4">
-                        <h5 class="card-title">Jogabilidade Profissional</h5>
-                        <p class="card-text">Depois de ativar a 2x automática... Já era! Sua mira 2x vai virar uma máquina CAPA. Não
+                        <h5 class="card-title" style="color: #ffffff;">Jogabilidade Profissional</h5>
+                        <p class="card-text" style="color: #ffffff;">Depois de ativar a 2x automática... Já era! Sua mira 2x vai virar uma máquina CAPA. Não
                             importa a distância, ela sempre vai seguir cabeça.</p>
                     </div>
                 </div>
@@ -415,8 +543,8 @@
                 <div class="card p-3 rounded-4">
                     <img src="imgs/velocimetro.png" class="card-img-top" alt="Velocímetro - Desempenho">
                     <div class="card-body">
-                        <h5 class="card-title">Desempenho Turbinado</h5>
-                        <p class="card-text">Tenha resposta rápida e performance máxima mesmo em partidas ranqueadas
+                        <h5 class="card-title" style="color: #ffffff;">Desempenho Turbinado</h5>
+                        <p class="card-text" style="color: #ffffff;">Tenha resposta rápida e performance máxima mesmo em partidas ranqueadas
                             intensas.</p>
                     </div>
                 </div>
@@ -425,175 +553,230 @@
     </div>
 
     <div class="text-center p-3 mt-2">
-        <h1 class="display-2 text-light"> 
-             Veja abaixo alguns
-            <span class="neon-red">
-                FeedBacks de clientes
-            </span>
-        </h1>
-    </div>
+    <h1 class="display-2" style="color: #ffffff;"> 
+        Veja abaixo alguns
+        <span class="neon-red">
+            FeedBacks de clientes
+        </span>
+    </h1>
+</div>
 
-    <div id="carouselDepoimentos" class="carousel slide container py-5" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (1).webp" alt="Depoimento 1" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (2).webp" alt="Depoimento 2" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (3).webp" alt="Depoimento 3" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (4).webp" alt="Depoimento 4" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (5).webp" alt="Depoimento 5" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (6).webp" alt="Depoimento 6" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
+<div id="carouselDepoimentos" class="carousel slide container py-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <!-- Primeiro depoimento -->
+        <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/pvsocial (6).jpg" alt="Depoimento 1" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Controles -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
-            <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-            <span class="visually-hidden">Próximo</span>
-        </button>
+        <!-- Segundo depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/pvsocial (2).jpg" alt="Depoimento 2" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terceiro depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 03.PNG" alt="Depoimento 3" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quarto depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/pvsocial (4).jpg" alt="Depoimento 4" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quinto depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/pvsocial (5).jpg" alt="Depoimento 5" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sexto depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 04.PNG" alt="Depoimento 6" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sétimo depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 01.jpg" alt="Depoimento 7" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oitavo depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 02.JPG" alt="Depoimento 8" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nono depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 05.jpg" alt="Depoimento 9" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+    </button>
+</div>
 
     <!-- Seção de benefícios e pacotes -->
     <section id="beneficios" class="beneficios">
         <div class="container text-center my-5">
-            <h1 class="display-2 text-light">
-                <span class="white-bold">ADQUIRA AGORA O SEU</span><br>
-                <span class="white-bold">Seu pacote <span class="neon-red">VIP</span></span>
+            <h1 class="display-2" style="color: #ffffff;">
+                <span style="color: #ffffff;">ADQUIRA AGORA O SEU</span><br>
+                <span style="color: #ffffff;">Seu painel <span class="neon-red">VIP</span></span>
             </h1>
             
             <!-- Pacote Android -->
             <div class="card pacote-card p-4 rounded-4 shadow-lg mx-auto mb-5" style="max-width: 350px; background-color: #121212;">
                 <div class="text-center mb-3">
-                    <img src="imgs/iphone.png" class="img-fluid rounded w-50" alt="Painel XIT Android" />
+                    <img src="imgs/android.png" class="img-fluid rounded w-50" alt="Painel XIT Android" />
                 </div>
                 
-                <h1 class="mb-3 white-bold text-center" style="font-size: 2rem; color: #00cc00;">
+                <h1 class="mb-3 text-center" style="font-size: 2rem; color: #00cc00;">
                     <span class="neon-vermelho">XIT</span> <span class="neon-red">ANDROID</span>
                 </h1>
-                <p class="mb-3 white-bold" style="font-size: 0.8rem;">Melhor <span class="neon-vermelho">XIT</span> para seu ANDROID</p>
+                <p class="mb-3" style="font-size: 0.8rem; color: #ffffff;">Melhor <span class="neon-vermelho">XIT</span> para seu ANDROID</p>
                 <hr style="border-color: #00ff00;">
                 
                 <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> UMP AUTOMÁTICA</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Disfarce anti-ban</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Mira que grudar</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Painel Mod menu</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Suporte Exclusivo no ZAP 24/7</li>
+                     <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Painel Mod Menu FFH4X</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Função HS pescoço + Bypass</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Mira automática 100% capa</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> 2x Automática</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Rastreamento de cabeça</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> UMP AUTOMÁTICA</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Disfarce 100% indetectável</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Com disfarçe pra não leva Ban!</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Mira que gruda</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Tutorial de instalação</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Nosso Whatsapp Oficial Como seu Suporte pessoal</li>
                 </ul>
                 
                 <div class="preco text-center mb-2">
-                    <h6 class="fs-2 text-decoration-line-through mb-5" style="color: red; font-size: 1.4rem;">
-                        De 147,90
-                    </h6>
-                    <h2 class="fw-bold mb-2" style="color: #fff; font-size: 2rem;">
-                        Por apenas <span class="neon-red fw-bold" style="font-size:2.5rem; text-shadow:0 0 1px #00ff00,0 0 1px #00ff00;">R$29,90</span>
-                    </h2>
-                    <a href="https://go.pepperpay.com.br/n9oz4"
-                       class="btn btn-lg btn-success fw-bold btn-pulse-green"
-                       style="font-size:1.3rem; border-radius:30px; border:2px solid #00ff00; background: linear-gradient(90deg,#00e676,#00c853); color:#000; box-shadow:0 0 20px #00ff00; animation:pulse 1.5s infinite;">
-                        <i class="bi bi-cart-fill me-2"></i> QUERO COMPRAR AGORA!
+                      <h3 class="fs-6 text-decoration-line-through mb-1"
+                style="color: red !important; font-size: 30px !important;"> De 147,90 </h3> <span style="color: #ffffff;">Por apenas</span> <br>
+                            <span class="neon-red fw-bold" style="font-size:2.5rem; text-shadow:0 0 1px #00ff00,0 0 1px #00ff00;">R$29,90</span>
+                    <br><br>
+                    <a href="https://go.pepperpay.com.br/6ztdj" class="btn-super-neon">
+                        <i class="bi bi-cart-fill me-2"></i> COMPRAR COM DESCONTO!
                     </a>
                 </div>
             </div>
@@ -604,43 +787,42 @@
                     <img src="imgs/iphone.png" class="img-fluid rounded w-50" alt="Painel XIT iPhone" />
                 </div>
                 
-                <h1 class="mb-3 white-bold text-center" style="font-size: 2rem; color: #00cc00;">
+                <h1 class="mb-3 text-center" style="font-size: 2rem; color: #00cc00;">
                     <span class="neon-vermelho">XIT</span> <span class="neon-red">IPHONE/iOS</span>
                 </h1>
-                <p class="mb-3 white-bold" style="font-size: 0.8rem;">Melhor <span class="neon-vermelho">XIT</span> para seu iPhone/iOS</p>
+                <p class="mb-3" style="font-size: 0.8rem; color: #ffffff;">Melhor <span class="neon-vermelho">XIT</span> para seu iPhone/iOS</p>
                 <hr style="border-color: #00ff00;">
                 
                 <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> UMP AUTOMÁTICA</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Disfarce anti-ban</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Mira que grudar</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Painel Mod menu</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Suporte Exclusivo no ZAP 24/7</li>
+                     <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Painel Mod Menu FFH4X</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Função HS pescoço + Bypass</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Mira automática 100% capa</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> 2x Automática</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Rastreamento de cabeça</li>
+                    <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> UMP AUTOMÁTICA</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> UMP AUTOMÁTICA</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Disfarce 100% indetectável</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Com disfarçe pra não leva Ban!</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Mira que gruda</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Tutorial de instalação</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
+                    <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Nosso Whatsapp Oficial Como seu Suporte pessoal</li>
                 </ul>
                 
-                <div class="preco text-center mb-2">
-                    <h6 class="fs-2 text-decoration-line-through mb-5" style="color: red; font-size: 1.4rem;">
-                        De 147,90
-                    </h6>
-                     <h2 class="fw-bold mb-2" style="color: #fff; font-size: 2rem;">
-                     Por apenas   <span class="neon-red fw-bold" style="font-size:2.5rem; text-shadow:0 0 1px #00ff00,0 0 1px #00ff00;">R$29,90</span>
-                  </h2>
-                    <a href="https://go.pepperpay.com.br/1xm07"
-                       class="btn btn-lg btn-success fw-bold btn-pulse-green"
-                       style="font-size:1.3rem; border-radius:30px; border:2px solid #00ff00; background: linear-gradient(90deg,#00e676,#00c853); color:#000; box-shadow:0 0 20px #00ff00; animation:pulse 1.5s infinite;">
-                        <i class="bi bi-cart-fill me-2"></i> QUERO COMPRAR AGORA!
+                    <div class="preco text-center mb-2">
+                      <h3 class="fs-6 text-decoration-line-through mb-1"
+                style="color: red !important; font-size: 30px !important;"> De 147,90 </h3> <span style="color: #ffffff;">Por apenas</span> <br>
+                            <span class="neon-red fw-bold" style="font-size:2.5rem; text-shadow:0 0 1px #00ff00,0 0 1px #00ff00;">R$29,90</span>
+                    <br><br>
+                    <a href="https://go.pepperpay.com.br/1xm07" class="btn-super-neon">
+                        <i class="bi bi-cart-fill me-2"></i> COMPRAR COM DESCONTO!
                     </a>
                 </div>
             </div>
@@ -651,46 +833,47 @@
                     <img src="imgs/CLT.jpg" class="img-fluid rounded w-60" alt="Painel CLT VIP" />
                 </div>
                 
-                <h1 class="display-2 text-light text-center">
+                <h1 class="display-2 text-center" style="color: #ffffff;">
                     Painel CLT <span class="neon-red">VIP</span>
                 </h1>
                 
-                <p class="mb-3 white-bold text-center" style="font-size: 0.8rem;">
+                <p class="mb-3 text-center" style="font-size: 0.8rem; color: #ffffff;">
                     Melhor Painel CLT para Android e iPhone/iOS
                 </p>
                 <hr style="border-color: #00ff00;">
                 
                 <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Painel VIP exclusivo Android/iPhone</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento com mira aberta</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> UMP automática</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Painel disfarçado de carteira de trabalho</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Aim Lock</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> No Recoil (não espalha tiro)</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Mira que gruda</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN e ANTI-BLACK LIST</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> BÔNUS: acesso às ferramentas secretas</li>
-                    <li><i class="bi bi-check-circle-fill star-green"></i> Suporte pessoal via WhatsApp Oficial</li>
-                </ul>
+            <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Painel CLT Premium</li>
+            <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Função HS pescoço + Bypass</li>
+            <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Acesso Permanente ao Painel</li>
+            <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> 2x Xitada + 2x Automática</li>
+            <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Rastreamento pra cabeça</li>
+            <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> No Recoil (não espalha tiro)</li>
+            <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> UMP automática</li>
+            <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Mira automática Full capa</li>
+            <li style="color: #ff6b35;"><i class="fa-solid fa-fire-flame-curved"></i> Rastreamento de mira aberta</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Disfarce indetectável</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Com disfarçe pra não leva Ban!</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Aim Lock</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full Capa</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Mira que Gruda</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Tutorial de instalação</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN e ANTI-BLACKLIST</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Bônus Extras: Acesso a todas ferramentas</li>
+            <li style="color: #ffffff;"><i class="bi bi-check-circle-fill star-green"></i> Suporte Exclusivo por 24h nosso WhatsApp Oficial</li>
+          </ul>
                 
-                <div class="preco text-center mb-2">
-                    <h6 class="fs-2 text-decoration-line-through mb-5" style="color: red; font-size: 1.4rem;">
-                        De 214,97
-                    </h6>
-                    <h2 class="fw-bold mb-2" style="color: #fff; font-size: 2rem;">
-                        Por apenas 
-                        <span class="neon-red fw-bold" style="font-size:2.5rem; text-shadow:0 0 1px #00ff00,0 0 1px #00ff00;">
-                            R$49,90
-                        </span>
-                    </h2>
-                    <a href="https://go.pepperpay.com.br/6ztdj"
-                       class="btn btn-lg btn-success fw-bold btn-pulse-green"
-                       style="font-size:1.3rem; border-radius:30px; border:2px solid #00ff00; background: linear-gradient(90deg,#00e676,#00c853); color:#000; box-shadow:0 0 20px #00ff00; animation:pulse 1.5s infinite;">
+                  <div class="preco text-center mb-2">
+                      <h3 class="fs-6 text-decoration-line-through mb-1"
+                style="color: red !important; font-size: 30px !important;">De 214,97</h3> <span style="color: #ffffff;">Por apenas</span> <br>
+                            <span class="neon-red fw-bold" style="font-size:2.5rem; text-shadow:0 0 1px #00ff00,0 0 1px #00ff00;">R$49,97</span><br>
+                    <br>
+                    <a href="https://go.pepperpay.com.br/n9oz4" class="btn-super-neon">
                         <i class="bi bi-cart-fill me-2"></i> COMPRAR COM DESCONTO!
                     </a>
                 </div>
@@ -705,8 +888,8 @@
                 <img src="imgs/garantia.webp" alt="Garantia" class="img-fluid" style="max-width: 200px;">
             </div>
             <div class="col-12 col-md-6">
-                <h4 class="mb-3">Garantia de Satisfação</h4>
-                <p class="fs-5">
+                <h4 class="mb-3" style="color: #ffffff;">Garantia de Satisfação</h4>
+                <p class="fs-5" style="color: #ffffff;">
                     Você tem <strong>7 dias de garantia</strong> para testar tudo sem compromisso. Se não ficar satisfeito,
                     seu dinheiro de volta sem perguntas até 7 dias após a compra.
                 </p>
@@ -716,15 +899,15 @@
 
     <!-- Nova seção Neo Vender -->
     <div class="container my-5">
-        <h2 class="text-center mb-4 neon-red" style="font-family: 'Bebas Neue', cursive;">Novidades da New</h2>
+        <h2 class="text-center mb-4 neon-red" style="font-family: 'Bebas Neue', cursive;">Grupo Exclisivo da New</h2>
         <div class="row justify-content-center">
             <div class="col-11 col-md-4 mb-4">
                 <div class="card p-3 bg-dark text-white rounded-4 shadow-lg">
                     <div class="d-flex justify-content-center mb-3">
-                        <img src="imgs/novo-vendedor.png" alt="Neo Vender" class="img-fluid rounded w-50" />
+                        <img src="imgs/logo new sensi.jpg" alt="Neo Vender" class="img-fluid rounded w-50" />
                     </div>
-                    <h3 class="text-center mb-3" style="font-family: 'Bebas Neue', cursive;">New Sensi</h3>
-                    <p class="text-center">
+                    <h3 class="text-center mb-3" style="font-family: 'Bebas Neue', cursive; color: #ffffff;">New Sensi</h3>
+                    <p class="text-center" style="color: #ffffff;">
                         Grupo exclusivo da new, fique por dentro das novidades e atualizações futuras
                     </p>
                     <div class="text-center mt-3">
@@ -747,13 +930,13 @@
                 <h2 class="accordion-header" id="faq2">
                     <button class="accordion-button collapsed bg-dark text-white" type="button"
                         data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false"
-                        aria-controls="faqCollapse2">
+                        aria-controls="faqCollapse2" style="color: #ffffff !important;">
                         COMO FUNCIONA O PRAZO DE GARANTIA?
                     </button>
                 </h2>
                 <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
+                    <div class="accordion-body" style="color: #ffffff !important;">
                         Você tem até <strong>7 dias de Garantia</strong> para pedir o reembolso integral se não ficar
                         satisfeito com o produto.
                     </div>
@@ -765,13 +948,13 @@
                 <h2 class="accordion-header" id="faq3">
                     <button class="accordion-button collapsed bg-dark text-white" type="button"
                         data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false"
-                        aria-controls="faqCollapse3">
+                        aria-controls="faqCollapse3" style="color: #ffffff !important;">
                         COMO VOU RECEBER O MEU PRODUTO?
                     </button>
                 </h2>
                 <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
+                    <div class="accordion-body" style="color: #ffffff !important;">
                         Assim que o pagamento for confirmado, você receberá automaticamente por e-mail (Gmail).
                         <br><strong>Pagou, recebeu!</strong>
                     </div>
@@ -783,13 +966,13 @@
                 <h2 class="accordion-header" id="faq4">
                     <button class="accordion-button collapsed bg-dark text-white" type="button"
                         data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false"
-                        aria-controls="faqCollapse4">
+                        aria-controls="faqCollapse4" style="color: #ffffff !important;">
                         COMO ACESSAR O PRODUTO?
                     </button>
                 </h2>
                 <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
+                    <div class="accordion-body" style="color: #ffffff !important;">
                         Você receberá acesso por e-mail. Também pode acessar pelo site oficial da plataforma:
                         <ol class="mt-2">
                             <li>Faça login na plataforma clicando em <strong>'Entrar'</strong></li>
@@ -805,13 +988,13 @@
                 <h2 class="accordion-header" id="faq5">
                     <button class="accordion-button collapsed bg-dark text-white" type="button"
                         data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false"
-                        aria-controls="faqCollapse5">
+                        aria-controls="faqCollapse5" style="color: #ffffff !important;">
                         ENSINAM COMO INSTALAR?
                     </button>
                 </h2>
                 <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faq5"
                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
+                    <div class="accordion-body" style="color: #ffffff !important;">
                         A instalação é super simples! Após a compra, você receberá um link de <strong>download</strong> e instruções passo a
                         passo. O processo leva menos de <strong>5 minutos</strong> e funciona em qualquer dispositivo.<br>
                         E para qualquer dúvida que seja estarei à disposição para ajudar<br> 
@@ -827,9 +1010,9 @@
     <!-- Footer -->
     <footer class="footer text-center mt-5">
         <div class="container">
-            <p>&copy; 2025 New Sensi. Todos os direitos reservados.</p>
-            <p>Instagram Oficial: <a href="https://instagram.com/new.sensi.ff" target="_blank" style="color:#00e676;">@new.sensi.ff</a></p>
-            <p>Desenvolvido por <strong>New sensi</strong></p>
+            <p style="color: #ffffff;">&copy; 2025 New Sensi. Todos os direitos reservados.</p>
+            <p style="color: #ffffff;">Instagram Oficial: <a href="https://instagram.com/new.sensi.ff" target="_blank" style="color:#00e676;">@new.sensi.ff</a></p>
+            <p style="color: #ffffff;">Desenvolvido por <strong>New sensi</strong></p>
         </div>
     </footer>
 
@@ -912,7 +1095,7 @@
                     "Realizou uma Compra de R$49,90",
                     "Realizou uma Compra de R$29,90",
                     "Confirmou o Pagamento de R$29,90",
-                    "Usou CUPOM: xitei"
+                    "Usou CUPOM: New Xiter"
                 ];
                 
                 const name = names[Math.floor(Math.random() * names.length)];
