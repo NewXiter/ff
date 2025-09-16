@@ -169,7 +169,7 @@
             font-weight: 700;
         }
 
-        /* BOTÃO SUPER CHAMATIVO COM EFEITO NEÓN E BRILHO */
+        /* BOTÃO SUPER CHAMATIVO COM EFEITO NEÓN E BRILHO (BRILHO REDUZIDO) */
         .btn-super-neon {
             position: relative;
             display: inline-block;
@@ -188,29 +188,26 @@
             cursor: pointer;
             transition: all 0.3s ease;
             
-            /* Sombra neón múltipla */
+            /* Sombra neón reduzida */
             box-shadow: 
+                0 0 10px #00ff41,
                 0 0 20px #00ff41,
-                0 0 40px #00ff41,
-                0 0 60px #00ff41,
-                0 0 80px #00ff41,
-                inset 0 0 20px rgba(0, 255, 65, 0.2);
+                0 0 30px #00ff41,
+                inset 0 0 10px rgba(0, 255, 65, 0.1);
             
             /* Animação de brilho */
             animation: 
-                neon-pulse 2s infinite,
-                gradient-shift 3s ease-in-out infinite,
-                glow-intense 1.5s ease-in-out infinite alternate;
+                neon-pulse-reduced 2s infinite,
+                gradient-shift 3s ease-in-out infinite;
         }
 
         .btn-super-neon:hover {
             transform: scale(1.05);
             box-shadow: 
-                0 0 30px #00ff41,
-                0 0 50px #00ff41,
-                0 0 70px #00ff41,
-                0 0 100px #00ff41,
-                inset 0 0 30px rgba(0, 255, 65, 0.3);
+                0 0 15px #00ff41,
+                0 0 25px #00ff41,
+                0 0 35px #00ff41,
+                inset 0 0 15px rgba(0, 255, 65, 0.2);
             color: #000 !important;
         }
 
@@ -229,21 +226,19 @@
             left: 100%;
         }
 
-        /* Animações do botão neón */
-        @keyframes neon-pulse {
+        /* Animações do botão neón com brilho reduzido */
+        @keyframes neon-pulse-reduced {
             0%, 100% { 
                 box-shadow: 
+                    0 0 10px #00ff41,
                     0 0 20px #00ff41,
-                    0 0 40px #00ff41,
-                    0 0 60px #00ff41,
-                    0 0 80px #00ff41;
+                    0 0 30px #00ff41;
             }
             50% { 
                 box-shadow: 
-                    0 0 30px #00ff41,
-                    0 0 50px #00ff41,
-                    0 0 70px #00ff41,
-                    0 0 100px #00ff41;
+                    0 0 15px #00ff41,
+                    0 0 25px #00ff41,
+                    0 0 35px #00ff41;
             }
         }
 
@@ -251,15 +246,6 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
-        }
-
-        @keyframes glow-intense {
-            from { 
-                text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000;
-            }
-            to { 
-                text-shadow: 0 0 15px #000, 0 0 25px #000, 0 0 35px #000;
-            }
         }
 
         /* Pulsar efeito original mantido para outros botões */
@@ -511,7 +497,7 @@
             <p class="fs-6 mt-3" style="color: #ffffff;">
                <p class="caption" style="color: #ffffff;">Assista ao vídeo acima e entenda</p>
             <p class="fs-8 mt-3" style="color: #ffffff;">
-            <a href="#beneficios" class="btn btn-pulse-green fw-bold mt-4 btn-comprar" style="color: #000;">QUERO XITA NO FREE FIRE!</a>
+            <a href="#beneficios" class="btn-super-neon mt-4">QUERO XITA NO FREE FIRE!</a>
         </div>
     </section>
 
