@@ -323,8 +323,20 @@
             z-index: 1;
             pointer-events: none;
         }
+
+
+
+
+
+
+
+
+
+
+
+
         
-/* Solution Section */
+  /* Solution Section */
         .solution-section {
             padding: 80px 0;
             background: linear-gradient(to bottom, hsl(222, 47%, 10%), hsl(0, 0%, 0%));
@@ -342,6 +354,88 @@
             text-align: center;
             margin-bottom: 48px;
         }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+        }
+
+        .testimonial-container {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .testimonial-image-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: var(--secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted-foreground);
+            margin-bottom: 16px;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .star {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
+            font-size: 24px;
+        }
+
+        .testimonial-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            color: var(--foreground);
+            font-size: 18px;
+        }
+
+        .testimonial-nav:hover {
+            background: var(--secondary);
+        }
+
+        .testimonial-nav.prev {
+            left: -16px;
+        }
+
+        .testimonial-nav.next {
+            right: -16px;
+        }
+
+
+
+
+
+
+
+
+
+
         
         /* ===== BOTÃO CTA PREMIUM ===== */
         .cta-premium {
