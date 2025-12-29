@@ -1,12 +1,22 @@
- <ti<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   tle>Painel XIT - Domine o Free Fire</title>
-    <meta name="description" content="Painel XIT - A solução definitiva para dominar o Free Fire. Recursos exclusivos para Android e iOS.">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Painel XIT - Domine o Free Fire | Nº1 do Brasil</title>
+    <meta name="description" content="Painel XIT - A solução definitiva para dominar o Free Fire. Full Vermelho Garantido! Recursos exclusivos para Android e iOS. +10.000 players satisfeitos.">
+    <meta name="keywords" content="painel xit, free fire, aimbot, hack, cheat, android, ios, iphone">
+    <link rel="canonical" href="https://painelxit.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Wistia Scripts -->
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/wkc2wjaez1.js" async type="module"></script>
+    
     <style>
+        /* ===================== RESET & VARIABLES ===================== */
         * {
             margin: 0;
             padding: 0;
@@ -14,72 +24,46 @@
         }
 
         :root {
-            --primary: #22c55e;
-            --primary-glow: #4ade80;
-            --background: #000000;
-            --foreground: #ffffff;
-            --muted: #6b7280;
-            --danger: #dc2626;
-            --gold: #fbbf24;
-            --card-bg: rgba(17, 24, 39, 0.8);
+            --primary: hsl(137, 100%, 50%);
+            --primary-glow: hsl(145, 100%, 45%);
+            --primary-dark: hsl(137, 100%, 40%);
+            --background: hsl(0, 0%, 4%);
+            --foreground: hsl(0, 0%, 100%);
+            --card-bg: hsl(0, 0%, 7%);
+            --muted: hsl(0, 0%, 65%);
+            --border: hsl(0, 0%, 15%);
+            --danger: hsl(0, 72%, 51%);
+            --danger-glow: hsl(340, 82%, 52%);
+            --gold: hsl(43, 96%, 56%);
+            --gold-dark: hsl(36, 100%, 50%);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Poppins', sans-serif;
             background: var(--background);
             color: var(--foreground);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .font-display {
             font-family: 'Bebas Neue', cursive;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
         }
 
-        /* Discount Banner */
-        .discount-banner {
-            background: linear-gradient(90deg, var(--danger), #991b1b);
-            padding: 12px;
-            text-align: center;
-            font-weight: 600;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            animation: pulse-bg 2s infinite;
-        }
-
-        @keyframes pulse-bg {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.9; }
-        }
-
-        /* Container */
+        /* ===================== UTILITY CLASSES ===================== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 120px 1rem 60px;
-            background: radial-gradient(ellipse at center top, rgba(34, 197, 94, 0.15) 0%, transparent 60%);
-        }
-
-        .hero-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: clamp(3rem, 10vw, 6rem);
-            letter-spacing: 4px;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 40px rgba(34, 197, 94, 0.5);
         }
 
         .text-primary {
@@ -90,57 +74,404 @@
             color: var(--danger);
         }
 
-        .hero-subtitle {
-            font-size: 1.25rem;
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .text-muted {
             color: var(--muted);
-            max-width: 600px;
-            margin-bottom: 2rem;
         }
 
-        .benefits-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--card-bg);
-            padding: 0.75rem 1.25rem;
-            border-radius: 9999px;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-        }
-
-        .benefit-icon {
+        .neon-primary {
             color: var(--primary);
+            text-shadow: 
+                0 0 5px var(--primary),
+                0 0 10px var(--primary),
+                0 0 20px var(--primary),
+                0 0 40px var(--primary);
+            animation: neonPulse 3s ease-in-out infinite alternate;
         }
 
-        .users-counter {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--card-bg);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            margin-bottom: 2rem;
+        .neon-danger {
+            color: var(--danger);
+            text-shadow: 
+                0 0 5px var(--danger),
+                0 0 10px var(--danger),
+                0 0 20px var(--danger);
+            animation: neonDangerPulse 2s ease-in-out infinite alternate;
         }
 
-        .pulse-dot {
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
+        .text-gradient-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 50%, hsl(130, 100%, 55%) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 50%, hsl(130, 100%, 55%) 100%);
+        }
+
+        .bg-gradient-danger {
+            background: linear-gradient(135deg, var(--danger), var(--danger-glow));
+        }
+
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        }
+
+        /* ===================== ANIMATIONS ===================== */
+        @keyframes neonPulse {
+            from { 
+                text-shadow: 
+                    0 0 5px var(--primary),
+                    0 0 10px var(--primary),
+                    0 0 20px var(--primary);
+            }
+            to { 
+                text-shadow: 
+                    0 0 8px var(--primary),
+                    0 0 15px var(--primary),
+                    0 0 25px var(--primary),
+                    0 0 35px var(--primary);
+            }
+        }
+
+        @keyframes neonDangerPulse {
+            from { 
+                text-shadow: 
+                    0 0 5px var(--danger),
+                    0 0 10px var(--danger);
+            }
+            to { 
+                text-shadow: 
+                    0 0 8px var(--danger),
+                    0 0 15px var(--danger),
+                    0 0 25px var(--danger);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        @keyframes pulse-scale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 30px hsla(137, 100%, 50%, 0.5), 0 15px 40px rgba(0, 0, 0, 0.4);
+                background-position: 0% 50%;
+            }
+            50% { 
+                box-shadow: 0 0 50px hsla(137, 100%, 50%, 0.8), 0 20px 50px rgba(0, 0, 0, 0.5);
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes cta-bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            25% { transform: translateY(-4px) scale(1.02); }
+            50% { transform: translateY(-2px) scale(1.01); }
+        }
+
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOutLeft {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(-400px); opacity: 0; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-pulse-scale {
+            animation: pulse-scale 2s ease-in-out infinite;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Shimmer Effect */
+        .shimmer-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 4s infinite;
+        }
+
+        /* ===================== DISCOUNT BANNER ===================== */
+        .discount-banner {
+            background: linear-gradient(90deg, var(--primary), hsl(145, 100%, 45%), var(--primary));
+            padding: 12px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .discount-banner span {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: hsl(0, 0%, 0%);
+        }
+
+        .discount-banner .highlight {
+            color: hsl(50, 100%, 50%);
+            text-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+        }
+
+        /* ===================== SALES COUNTER ===================== */
+        .sales-counter {
+            position: fixed;
+            top: 60px;
+            right: 16px;
+            z-index: 90;
+            background: linear-gradient(135deg, var(--danger), hsl(330, 80%, 50%));
+            color: white;
+            padding: 12px 16px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+            cursor: grab;
+            animation: bounce-subtle 3s infinite;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sales-counter:active {
+            cursor: grabbing;
+        }
+
+        /* ===================== PURCHASE NOTIFICATIONS ===================== */
+        .notifications-container {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            z-index: 95;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .purchase-notification {
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 16px;
+            max-width: 300px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: slideInLeft 0.5s ease forwards;
+        }
+
+        .purchase-notification.exiting {
+            animation: slideOutLeft 0.5s ease forwards;
+        }
+
+        .purchase-notification .content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .purchase-notification .icon-wrapper {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .purchase-notification .details {
+            flex: 1;
+        }
+
+        .purchase-notification .label {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .purchase-notification .product {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .purchase-notification .info {
+            color: var(--muted);
+            font-size: 0.75rem;
+        }
+
+        /* ===================== HERO SECTION ===================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 1rem 60px;
+            background: 
+                radial-gradient(ellipse at center top, hsla(137, 100%, 50%, 0.1) 0%, transparent 60%),
+                linear-gradient(135deg, hsl(0, 0%, 4%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 7%) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, hsla(137, 100%, 50%, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, hsla(145, 100%, 45%, 0.08) 0%, transparent 50%);
+            z-index: 0;
+            animation: backgroundPulse 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            width: 160px;
+            height: auto;
+            margin: 0 auto 2rem;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px hsla(137, 100%, 50%, 0.6));
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-benefits {
+            font-size: 1.125rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            line-height: 2;
+        }
+
+        .hero-benefits p {
+            margin: 0.5rem 0;
+        }
+
+        .hero-benefits strong {
+            color: var(--foreground);
+        }
+
+        .users-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: hsla(137, 100%, 50%, 0.1);
+            border: 2px solid var(--primary);
+            padding: 12px 24px;
+            border-radius: 9999px;
+            margin-bottom: 2rem;
+            animation: pulse-scale 2s ease-in-out infinite;
+        }
+
+        .users-counter svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+        }
+
+        .users-counter strong {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
+        }
+
+        /* Video Container */
+        .video-wrapper {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid hsla(137, 100%, 50%, 0.3);
+            box-shadow: 0 0 30px hsla(137, 100%, 50%, 0.3);
+            transition: transform 0.5s ease;
+            position: relative;
+        }
+
+        .video-wrapper:hover {
+            transform: scale(1.02);
+        }
+
+        .video-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, hsla(137, 100%, 50%, 0.1), transparent, hsla(137, 100%, 50%, 0.1));
+            pointer-events: none;
+        }
+
+        .wistia-player {
+            width: 100%;
+            aspect-ratio: 16/9;
         }
 
         /* CTA Button */
@@ -149,38 +480,120 @@
             padding: 1.25rem 3rem;
             font-size: 1.5rem;
             font-weight: 900;
-            color: #000;
+            color: hsl(0, 0%, 0%);
             background: linear-gradient(90deg, var(--primary), var(--primary-glow), var(--primary));
             background-size: 200% 200%;
             border: none;
-            border-radius: 12px;
+            border-radius: 16px;
             cursor: pointer;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 0 40px rgba(34, 197, 94, 0.6), 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 40px hsla(137, 100%, 50%, 0.6), 0 20px 50px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
-            animation: glow-pulse 2s infinite, bounce-subtle 2s infinite;
+            animation: glow-pulse 2s infinite, cta-bounce 3s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
         }
 
         .cta-button:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 0 80px rgba(34, 197, 94, 0.9), 0 30px 70px rgba(0, 0, 0, 0.6);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 0 80px hsla(137, 100%, 50%, 0.9), 0 30px 70px rgba(0, 0, 0, 0.6);
         }
 
-        @keyframes glow-pulse {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        .cta-button:hover::before {
+            left: 100%;
         }
 
-        @keyframes bounce-subtle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        /* Section Styles */
-        .section {
+        /* ===================== FEATURES SECTION ===================== */
+        .features-section {
             padding: 80px 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 60px hsla(137, 100%, 50%, 0.15);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 32px hsla(137, 100%, 50%, 0.3);
+        }
+
+        .feature-icon svg {
+            width: 40px;
+            height: 40px;
+            color: hsl(0, 0%, 0%);
+        }
+
+        .feature-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .feature-description {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* ===================== SOLUTIONS SECTION ===================== */
+        .solutions-section {
+            padding: 80px 1rem;
+            background: linear-gradient(180deg, hsl(220, 20%, 8%) 0%, var(--background) 100%);
         }
 
         .section-title {
@@ -196,56 +609,9 @@
             color: var(--muted);
             font-size: 1.125rem;
             margin-bottom: 3rem;
-        }
-
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
-        }
-
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-        }
-
-        .feature-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-description {
-            color: var(--muted);
-        }
-
-        /* Solutions Section */
-        .solutions-section {
-            background: linear-gradient(to bottom, #111827, #000);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .video-container {
@@ -253,27 +619,65 @@
             margin: 0 auto;
             border-radius: 16px;
             overflow: hidden;
-            border: 2px solid rgba(34, 197, 94, 0.3);
-            box-shadow: 0 0 40px rgba(34, 197, 94, 0.2);
+            border: 2px solid hsla(137, 100%, 50%, 0.3);
+            box-shadow: 0 0 40px hsla(137, 100%, 50%, 0.2);
+            position: relative;
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, hsla(137, 100%, 50%, 0.1), transparent, hsla(137, 100%, 50%, 0.05));
+            pointer-events: none;
+            z-index: 1;
         }
 
         .video-caption {
             text-align: center;
             color: var(--muted);
-            margin-top: 1rem;
-            font-size: 1.125rem;
+            margin-top: 1.5rem;
+            font-size: 1rem;
         }
 
-        /* Social Proof */
-        .social-proof {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), transparent);
+        /* ===================== SOCIAL PROOF SECTION ===================== */
+        .social-proof-section {
+            padding: 60px 1rem;
+        }
+
+        .social-proof-card {
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow), hsl(130, 100%, 55%));
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-proof-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 4s infinite;
+        }
+
+        .social-proof-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: hsl(0, 0%, 0%);
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .stat-item {
@@ -282,31 +686,26 @@
 
         .stat-number {
             font-family: 'Bebas Neue', cursive;
-            font-size: 3rem;
-            color: var(--primary);
-            text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+            font-size: 2.5rem;
+            color: hsl(0, 0%, 0%);
         }
 
         .stat-label {
-            color: var(--muted);
+            color: hsla(0, 0%, 0%, 0.8);
             font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .testimonial-quote {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.5rem;
-            font-style: italic;
-            padding: 2rem;
-            background: var(--card-bg);
-            border-radius: 16px;
-            border-left: 4px solid var(--primary);
+        .social-proof-quote {
+            color: hsl(0, 0%, 0%);
+            font-weight: 600;
+            font-size: 1.125rem;
         }
 
-        /* Packages Section */
+        /* ===================== PACKAGES SECTION ===================== */
+        .packages-section {
+            padding: 80px 1rem;
+        }
+
         .packages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -316,30 +715,49 @@
 
         .package-card {
             background: var(--card-bg);
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--border);
             border-radius: 20px;
             padding: 2rem;
             position: relative;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
         }
 
         .package-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
             border-color: var(--primary);
+            box-shadow: 0 20px 60px hsla(137, 100%, 50%, 0.15);
+        }
+
+        .package-card:hover::before {
+            transform: scaleX(1);
         }
 
         .package-card.featured {
-            border-color: var(--gold);
-            box-shadow: 0 0 40px rgba(251, 191, 36, 0.3);
+            border-color: hsl(145, 100%, 45%);
         }
 
         .package-badge {
             position: absolute;
-            top: -12px;
+            top: 0;
             left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(90deg, var(--gold), #f59e0b);
-            color: #000;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
+            color: hsl(0, 0%, 0%);
             padding: 0.5rem 1.5rem;
             border-radius: 9999px;
             font-weight: 700;
@@ -347,17 +765,37 @@
         }
 
         .package-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--primary);
+            box-shadow: 0 8px 32px hsla(137, 100%, 50%, 0.3);
+        }
+
+        .package-icon svg {
+            width: 48px;
+            height: 48px;
+            color: hsl(0, 0%, 0%);
         }
 
         .package-title {
-            font-size: 1.75rem;
-            font-weight: 700;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            text-align: center;
             margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .package-subtitle {
+            text-align: center;
             color: var(--muted);
             margin-bottom: 1.5rem;
         }
@@ -365,21 +803,33 @@
         .package-features {
             list-style: none;
             margin-bottom: 2rem;
+            flex: 1;
         }
 
         .package-features li {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            gap: 12px;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid hsla(0, 0%, 100%, 0.05);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
-        .package-features li::before {
-            content: "✓";
+        .package-features li:hover {
+            padding-left: 8px;
             color: var(--primary);
-            font-weight: bold;
         }
+
+        .package-features li svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .package-features li.fire svg { color: var(--danger); }
+        .package-features li.check svg { color: var(--primary); }
+        .package-features li.crown svg { color: var(--gold); }
 
         .package-price {
             text-align: center;
@@ -387,51 +837,56 @@
         }
 
         .price-old {
-            color: var(--muted);
+            color: var(--danger);
             text-decoration: line-through;
-            font-size: 1.25rem;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .price-label {
+            color: var(--muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
         }
 
         .price-new {
             font-family: 'Bebas Neue', cursive;
             font-size: 3rem;
-            color: var(--primary);
-        }
-
-        .price-period {
-            color: var(--muted);
-            font-size: 0.875rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .package-button {
             display: block;
             width: 100%;
             padding: 1rem;
-            font-size: 1.125rem;
+            font-size: 1rem;
             font-weight: 700;
             text-align: center;
             text-decoration: none;
             border-radius: 12px;
             transition: all 0.3s ease;
-        }
-
-        .package-button.primary {
             background: linear-gradient(90deg, var(--primary), var(--primary-glow));
-            color: #000;
-        }
-
-        .package-button.gold {
-            background: linear-gradient(90deg, var(--gold), #f59e0b);
-            color: #000;
+            color: hsl(0, 0%, 0%);
+            border: none;
+            cursor: pointer;
         }
 
         .package-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+            transform: scale(1.03);
+            box-shadow: 0 8px 30px hsla(137, 100%, 50%, 0.4);
         }
 
-        /* Guarantee Section */
+        .package-button.gold {
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+        }
+
+        /* ===================== GUARANTEE SECTION ===================== */
         .guarantee-section {
+            padding: 80px 1rem;
             text-align: center;
         }
 
@@ -445,30 +900,62 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 2rem;
-            box-shadow: 0 0 40px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 0 40px hsla(137, 100%, 50%, 0.5);
         }
 
         .guarantee-days {
             font-family: 'Bebas Neue', cursive;
             font-size: 3rem;
-            color: #000;
+            color: hsl(0, 0%, 0%);
             line-height: 1;
         }
 
         .guarantee-text {
-            color: #000;
+            color: hsl(0, 0%, 0%);
             font-weight: 700;
             font-size: 0.875rem;
         }
 
-        .guarantee-description {
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--muted);
-            font-size: 1.125rem;
+        .guarantee-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
         }
 
-        /* FAQ Section */
+        .guarantee-description {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: var(--muted);
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .guarantee-points {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .guarantee-point {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .guarantee-point svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        /* ===================== FAQ SECTION ===================== */
+        .faq-section {
+            padding: 80px 1rem;
+        }
+
         .faq-list {
             max-width: 800px;
             margin: 0 auto;
@@ -476,10 +963,15 @@
 
         .faq-item {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border);
             border-radius: 12px;
             margin-bottom: 1rem;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
         }
 
         .faq-question {
@@ -489,45 +981,52 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
+            transition: background 0.3s ease;
         }
 
         .faq-question:hover {
-            background: rgba(34, 197, 94, 0.1);
+            background: hsla(137, 100%, 50%, 0.05);
+        }
+
+        .faq-question svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-question svg {
+            transform: rotate(180deg);
         }
 
         .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
             padding: 0 1.25rem 1.25rem;
+        }
+
+        .faq-answer p {
             color: var(--muted);
-            display: none;
+            line-height: 1.7;
         }
 
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        /* Footer */
+        /* ===================== FOOTER ===================== */
         .footer {
-            background: #111827;
-            padding: 3rem 1rem;
+            padding: 40px 1rem;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border);
         }
 
-        .footer-links {
+        .footer-content {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
-            color: var(--muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
         }
 
         .footer-copyright {
@@ -535,343 +1034,385 @@
             font-size: 0.875rem;
         }
 
-        /* Sales Counter */
-        .sales-counter {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
             background: var(--card-bg);
-            border: 2px solid var(--primary);
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            z-index: 50;
-            box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--foreground);
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .sales-number {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2rem;
-            color: var(--primary);
+        .footer-social a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: hsl(0, 0%, 0%);
+            transform: translateY(-3px);
         }
 
-        .sales-label {
+        .footer-developer {
             font-size: 0.75rem;
             color: var(--muted);
-            text-transform: uppercase;
         }
 
-        /* Responsive */
+        .footer-developer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: clamp(2rem, 10vw, 3.5rem);
+            }
+
+            .hero-logo {
+                width: 120px;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1.25rem;
             }
 
             .packages-grid {
                 grid-template-columns: 1fr;
             }
 
-            .benefits-list {
-                flex-direction: column;
-                align-items: center;
+            .sales-counter {
+                top: 50px;
+                right: 8px;
+                padding: 8px 12px;
+                font-size: 0.75rem;
             }
 
-            .footer-links {
-                flex-direction: column;
+            .purchase-notification {
+                max-width: 260px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
                 gap: 1rem;
             }
-        }
 
-        /* Wistia Player Styles */
-        wistia-player[media-id='wkc2wjaez1']:not(:defined) { 
-            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/wkc2wjaez1/swatch'); 
-            display: block; 
-            filter: blur(5px); 
-            padding-top: 55%; 
+            .stat-number {
+                font-size: 1.75rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Discount Banner -->
     <div class="discount-banner">
-        🔥 OFERTA ESPECIAL: 50% OFF por tempo limitado! Use o código: <strong>XIT50</strong> 🔥
+        <span>🔥 OFERTA EXCLUSIVA: <span class="highlight">FIM DE ANO!</span> - <span id="currentDate"></span></span>
     </div>
+
+    <!-- Sales Counter -->
+    <div class="sales-counter" id="salesCounter">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+        <span id="salesCount">252</span> vendas hoje!
+    </div>
+
+    <!-- Purchase Notifications Container -->
+    <div class="notifications-container" id="notificationsContainer"></div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1 class="hero-title">
-            PAINEL <span class="text-primary">XIT</span>
-        </h1>
-        <p class="hero-subtitle">
-            A solução definitiva para dominar o Free Fire. Recursos exclusivos que vão transformar sua gameplay.
-        </p>
-        
-        <div class="benefits-list">
-            <div class="benefit-item">
-                <span class="benefit-icon">✓</span>
-                <span>Aimbot Preciso</span>
+        <div class="hero-content animate-fade-in-up">
+            <!-- Logo -->
+            <img src="https://raw.githubusercontent.com/lovable-dev/images/main/logo.png" alt="New Xiter Logo" class="hero-logo" id="heroLogo">
+            
+            <!-- Title -->
+            <h1 class="hero-title">
+                O <span class="neon-primary">PAINEL XIT</span> Nº1 DO BRASIL<br>
+                <span class="neon-danger">FULL VERMELHO</span> GARANTIDO!
+            </h1>
+            
+            <!-- Benefits -->
+            <div class="hero-benefits">
+                <p>• PAINEL com + <strong class="neon-primary">10 mil Players</strong></p>
+                <p>• Sua mira vai dar só <span class="neon-danger">Full Vermelho</span>!</p>
+                <p>• Painel 100% Anti-Ban Anti-Blacklist!</p>
+                <p>• Suporte Exclusivo 24Horas!</p>
             </div>
-            <div class="benefit-item">
-                <span class="benefit-icon">✓</span>
-                <span>Wallhack Indetectável</span>
+            
+            <!-- User Counter -->
+            <div class="users-counter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <strong id="userCount">998</strong>
+                <span>usuários ativos agora!</span>
             </div>
-            <div class="benefit-item">
-                <span class="benefit-icon">✓</span>
-                <span>Suporte 24/7</span>
-            </div>
-        </div>
 
-        <div class="users-counter">
-            <div class="pulse-dot"></div>
-            <span><strong>2.847</strong> usuários online agora</span>
+            <!-- Video -->
+            <div class="video-wrapper">
+                <wistia-player media-id="wkc2wjaez1" class="wistia-player"></wistia-player>
+            </div>
+            
+            <!-- CTA Button -->
+            <a href="#pacotes" class="cta-button">
+                🎯 QUERO MEU PAINEL XIT!
+            </a>
         </div>
-
-        <a href="#packages" class="cta-button">
-            QUERO DOMINAR AGORA 🎯
-        </a>
     </section>
 
     <!-- Features Section -->
-    <section class="section">
+    <section class="features-section">
         <div class="container">
-            <h2 class="section-title">
-                Por que escolher o <span class="text-primary">Painel XIT</span>?
-            </h2>
-            <p class="section-subtitle">
-                Recursos exclusivos desenvolvidos para maximizar sua performance
-            </p>
-
             <div class="features-grid">
+                <!-- Feature 1 -->
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">Aimbot Avançado</h3>
-                    <p class="feature-description">
-                        Mira automática com configurações personalizáveis para headshots perfeitos.
-                    </p>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    </div>
+                    <h3 class="feature-title font-display">Mira 2x Automática</h3>
+                    <p class="feature-description">Mira 100% automática com precisão cirúrgica. Cada tiro é CAPA garantida. 2x Automática ela tem 100% de precisão de mira sem errar um tiro!</p>
                 </div>
+                
+                <!-- Feature 2 -->
                 <div class="feature-card">
-                    <div class="feature-icon">👁️</div>
-                    <h3 class="feature-title">ESP Completo</h3>
-                    <p class="feature-description">
-                        Veja inimigos através de paredes, itens, veículos e muito mais.
-                    </p>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <h3 class="feature-title font-display">Rastreamento pra Cabeça</h3>
+                    <p class="feature-description">Sistema de rastreamento avançado que gruda na cabeça dos inimigos. 2x automática que gruda Full, mesmo à longa distância.</p>
                 </div>
+                
+                <!-- Feature 3 -->
                 <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Anti-Ban</h3>
-                    <p class="feature-description">
-                        Sistema de proteção atualizado diariamente para máxima segurança.
-                    </p>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="feature-title font-display">Sobre nosso Painel XIT</h3>
+                    <p class="feature-description">Nosso Painel conta com várias funções no Sistema, como ESP, Aimbot, aimkill, e várias outras opções avançadas. Jogue com segurança total.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section class="section solutions-section">
+    <!-- Solutions Section (with Wistia Video) -->
+    <section class="solutions-section">
         <div class="container">
-            <h2 class="section-title">
-                A <span class="text-danger">Solução</span> Perfeita
-            </h2>
-            <p class="section-subtitle">
-                Painel XIT resolve todos esses problemas acima de uma vez
-            </p>
-
+            <h2 class="section-title">A Solução <span class="neon-primary">Perfeita</span></h2>
+            <p class="section-subtitle">Veja como o Painel XIT transforma suas partidas e eleva seu gameplay para o próximo nível!</p>
+            
             <div class="video-container">
-                <script src="https://fast.wistia.com/player.js" async></script>
-                <script src="https://fast.wistia.com/embed/wkc2wjaez1.js" async type="module"></script>
-                <wistia-player media-id="wkc2wjaez1" aspect="1.8181818181818181"></wistia-player>
+                <wistia-player media-id="wkc2wjaez1" style="width: 100%; aspect-ratio: 16/9;"></wistia-player>
             </div>
-            <p class="video-caption">👆 Veja o Painel XIT em ação</p>
+            <p class="video-caption">Assista e comprove: milhares de players já dominam com o Painel XIT</p>
         </div>
     </section>
 
     <!-- Social Proof Section -->
-    <section class="section social-proof">
+    <section class="social-proof-section">
         <div class="container">
-            <h2 class="section-title">
-                Números que <span class="text-primary">Impressionam</span>
-            </h2>
-
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Clientes Satisfeitos</div>
+            <div class="social-proof-card shimmer-effect">
+                <h3 class="social-proof-title">🔱 MAIS DE 10.000 PLAYERS JÁ ESCOLHERAM O PAINEL XIT! 🔱</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <p class="stat-number">12.847</p>
+                        <p class="stat-label">Clientes satisfeitos</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-number">99.7%</p>
+                        <p class="stat-label">Taxa de aprovação</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-number">24/7</p>
+                        <p class="stat-label">Suporte especializado</p>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">99.9%</div>
-                    <div class="stat-label">Taxa de Aprovação</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Suporte Ativo</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">Bans Reportados</div>
-                </div>
-            </div>
-
-            <div class="testimonial-quote">
-                "Depois de usar o Painel XIT, minha gameplay mudou completamente. Recomendo para todos!"
-                <br><br>
-                <strong>— João Silva, Cliente VIP</strong>
+                
+                <p class="social-proof-quote">"Se você não está usando o Painel XIT, seus adversários estão levando vantagem sobre você!"</p>
             </div>
         </div>
     </section>
 
     <!-- Packages Section -->
-    <section class="section" id="packages">
+    <section class="packages-section" id="pacotes">
         <div class="container">
-            <h2 class="section-title">
-                Escolha seu <span class="text-primary">Plano</span>
-            </h2>
-            <p class="section-subtitle">
-                Planos flexíveis para todas as necessidades
-            </p>
-
+            <h2 class="section-title">Escolha Seu <span class="neon-primary">Painel XIT</span> ABAIXO</h2>
+            
             <div class="packages-grid">
                 <!-- Android Package -->
                 <div class="package-card">
-                    <div class="package-icon">📱</div>
-                    <h3 class="package-title">Android</h3>
-                    <p class="package-subtitle">Para dispositivos Android</p>
+                    <div class="package-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <h3 class="package-title">ANDROID</h3>
+                    <p class="package-subtitle">O painel mais avançado para Android</p>
                     
                     <ul class="package-features">
-                        <li>Aimbot configurável</li>
-                        <li>ESP/Wallhack</li>
-                        <li>Anti-ban básico</li>
-                        <li>Suporte por Discord</li>
-                        <li>Atualizações incluídas</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Painel Mod Menu FFH4X</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Função HS pescoço + Bypass</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Mira automática 100% capa</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> 2x Automática</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Rastreamento de cabeça</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> UMP AUTOMÁTICA</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aimbot Cabeça</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% Anti-Ban/Anti-BlackList!</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Suporte 24h via WhatsApp</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 7 Dias de Garantia</li>
                     </ul>
-
+                    
                     <div class="package-price">
-                        <div class="price-old">R$ 99,90</div>
-                        <div class="price-new">R$ 49,90</div>
-                        <div class="price-period">por mês</div>
+                        <p class="price-old">De R$ 147,90</p>
+                        <p class="price-label">Por apenas</p>
+                        <p class="price-new">R$ 29,90</p>
                     </div>
+                    
+                    <a href="https://go.perfectpay.com.br/PPU38CPTN1D" target="_blank" class="package-button">🛒 COMPRAR COM DESCONTO!</a>
+                </div>
 
-                    <a href="#" class="package-button primary">COMPRAR AGORA</a>
+                <!-- iPhone Package -->
+                <div class="package-card">
+                    <div class="package-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <h3 class="package-title">IPHONE/IOS</h3>
+                    <p class="package-subtitle">O painel mais Completo para iPhone/iOS</p>
+                    
+                    <ul class="package-features">
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Painel Mod Menu FFH4X</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Função HS pescoço + Bypass</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Mira automática 100% capa</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> 2x Automática</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Rastreamento de cabeça</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> UMP AUTOMÁTICA</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aimbot Cabeça</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% Anti-Ban/Anti-BlackList!</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Suporte 24h via WhatsApp</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 7 Dias de Garantia</li>
+                    </ul>
+                    
+                    <div class="package-price">
+                        <p class="price-old">De R$ 147,90</p>
+                        <p class="price-label">Por apenas</p>
+                        <p class="price-new">R$ 29,90</p>
+                    </div>
+                    
+                    <a href="https://go.perfectpay.com.br/PPU38CPTN1C" target="_blank" class="package-button">🛒 COMPRAR COM DESCONTO!</a>
                 </div>
 
                 <!-- VIP Package -->
                 <div class="package-card featured">
-                    <div class="package-badge">⭐ MAIS POPULAR</div>
-                    <div class="package-icon">👑</div>
+                    <div class="package-badge">Mais Popular!</div>
+                    <div class="package-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
                     <h3 class="package-title">VIP</h3>
-                    <p class="package-subtitle">O pacote completo</p>
+                    <p class="package-subtitle">Acesso VITALÍCIO + Bônus Exclusivos</p>
                     
                     <ul class="package-features">
-                        <li>Tudo do Android + iOS</li>
-                        <li>Aimbot premium</li>
-                        <li>Anti-ban avançado</li>
-                        <li>Suporte prioritário 24/7</li>
-                        <li>Acesso a recursos beta</li>
-                        <li>Multi-dispositivo</li>
+                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> Painel Mod Menu FFH4X</li>
+                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> Acesso VIP Permanente</li>
+                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> No Recoil (não espalha tiros)</li>
+                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> 2x Xitada + 2x Automática</li>
+                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> Rastreamento de cabeça avançado</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Função HS pescoço + Bypass</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> UMP automática premium</li>
+                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Disfarce 100% indetectável</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Suporte VIP Exclusivo 24h</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Atualizações vitalícias</li>
+                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Garantia Total de 30 Dias!</li>
                     </ul>
-
-                    <div class="package-price">
-                        <div class="price-old">R$ 199,90</div>
-                        <div class="price-new">R$ 89,90</div>
-                        <div class="price-period">por mês</div>
-                    </div>
-
-                    <a href="#" class="package-button gold">QUERO SER VIP</a>
-                </div>
-
-                <!-- iOS Package -->
-                <div class="package-card">
-                    <div class="package-icon">🍎</div>
-                    <h3 class="package-title">iPhone/iOS</h3>
-                    <p class="package-subtitle">Para dispositivos Apple</p>
                     
-                    <ul class="package-features">
-                        <li>Aimbot configurável</li>
-                        <li>ESP/Wallhack</li>
-                        <li>Anti-ban básico</li>
-                        <li>Suporte por Discord</li>
-                        <li>Atualizações incluídas</li>
-                    </ul>
-
                     <div class="package-price">
-                        <div class="price-old">R$ 129,90</div>
-                        <div class="price-new">R$ 59,90</div>
-                        <div class="price-period">por mês</div>
+                        <p class="price-old">De R$ 299,90</p>
+                        <p class="price-label">Por apenas</p>
+                        <p class="price-new">R$ 49,90</p>
                     </div>
-
-                    <a href="#" class="package-button primary">COMPRAR AGORA</a>
+                    
+                    <a href="https://go.perfectpay.com.br/PPU38CPTN1E" target="_blank" class="package-button gold">👑 COMPRAR VIP AGORA!</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Guarantee Section -->
-    <section class="section guarantee-section">
+    <section class="guarantee-section">
         <div class="container">
-            <h2 class="section-title">
-                Garantia de <span class="text-primary">7 Dias</span>
-            </h2>
-
             <div class="guarantee-badge">
-                <div class="guarantee-days">7</div>
-                <div class="guarantee-text">DIAS</div>
+                <span class="guarantee-days">7</span>
+                <span class="guarantee-text">DIAS</span>
             </div>
-
+            
+            <h2 class="section-title">Garantia <span class="neon-primary">Total</span> de Satisfação</h2>
+            
             <p class="guarantee-description">
-                Se você não ficar 100% satisfeito com o Painel XIT nos primeiros 7 dias, 
-                devolvemos seu dinheiro integralmente. Sem perguntas, sem burocracia.
+                Experimente o Painel XIT por 7 dias completos. Se por qualquer motivo você não ficar 100% satisfeito com os resultados, devolvemos seu dinheiro integralmente. Sem perguntas, sem burocracia.
             </p>
+            
+            <div class="guarantee-points">
+                <div class="guarantee-point">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Reembolso em até 24h</span>
+                </div>
+                <div class="guarantee-point">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Sem perguntas</span>
+                </div>
+                <div class="guarantee-point">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Compra 100% segura</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="section">
+    <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">
-                Perguntas <span class="text-primary">Frequentes</span>
-            </h2>
-
+            <h2 class="section-title">Perguntas <span class="neon-primary">Frequentes</span></h2>
+            
             <div class="faq-list">
-                <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-item">
                     <div class="faq-question">
-                        <span>É seguro usar o Painel XIT?</span>
-                        <span>+</span>
+                        <span>O Painel XIT funciona em qual dispositivo?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </div>
                     <div class="faq-answer">
-                        Sim! Nosso sistema anti-ban é atualizado diariamente para garantir máxima segurança. 
-                        Temos mais de 50.000 clientes satisfeitos sem nenhum ban reportado.
+                        <p>Funciona em Android e iPhone/iOS. Temos versões otimizadas para cada sistema operacional, garantindo o melhor desempenho possível.</p>
                     </div>
                 </div>
-
-                <div class="faq-item" onclick="this.classList.toggle('active')">
+                
+                <div class="faq-item">
                     <div class="faq-question">
-                        <span>Funciona em qual versão do Free Fire?</span>
-                        <span>+</span>
+                        <span>O Painel é seguro? Posso ser banido?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </div>
                     <div class="faq-answer">
-                        O Painel XIT funciona em todas as versões do Free Fire, incluindo Free Fire MAX. 
-                        Atualizamos nosso sistema sempre que há uma nova atualização do jogo.
+                        <p>Sim, é 100% seguro! Nosso painel é Anti-Ban e Anti-Blacklist. Utilizamos tecnologia de ponta para garantir que você jogue sem riscos.</p>
                     </div>
                 </div>
-
-                <div class="faq-item" onclick="this.classList.toggle('active')">
+                
+                <div class="faq-item">
                     <div class="faq-question">
                         <span>Como recebo o acesso após a compra?</span>
-                        <span>+</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </div>
                     <div class="faq-answer">
-                        Após a confirmação do pagamento, você receberá um email com instruções de acesso 
-                        e será convidado para nosso grupo VIP no Discord com suporte exclusivo.
+                        <p>Imediatamente após a confirmação do pagamento, você receberá o acesso por e-mail e WhatsApp com todas as instruções de instalação e configuração.</p>
                     </div>
                 </div>
-
-                <div class="faq-item" onclick="this.classList.toggle('active')">
+                
+                <div class="faq-item">
                     <div class="faq-question">
-                        <span>Posso usar em mais de um dispositivo?</span>
-                        <span>+</span>
+                        <span>Qual a diferença entre os planos?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </div>
                     <div class="faq-answer">
-                        Os planos Android e iOS permitem uso em 1 dispositivo. 
-                        O plano VIP permite uso em até 3 dispositivos simultâneos.
+                        <p>Os planos Android e iPhone são específicos para cada sistema. O plano VIP inclui acesso vitalício, recursos premium exclusivos e suporte prioritário 24h.</p>
                     </div>
                 </div>
             </div>
@@ -880,21 +1421,104 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-links">
-            <a href="#">Termos de Uso</a>
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Contato</a>
-            <a href="#">Discord</a>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2024 Painel XIT. Todos os direitos reservados.</p>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                </div>
+                
+                <p class="footer-developer">Desenvolvido por <a href="#">Painel XIT Team</a></p>
+            </div>
         </div>
-        <p class="footer-copyright">
-            © 2024 Painel XIT. Todos os direitos reservados.
-        </p>
     </footer>
 
-    <!-- Sales Counter -->
-    <div class="sales-counter">
-        <div class="sales-number">147</div>
-        <div class="sales-label">vendas hoje</div>
-    </div>
+    <!-- JavaScript -->
+    <script>
+        // Current Date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('pt-BR');
+
+        // Sales Counter
+        let salesCount = 252;
+        const salesElement = document.getElementById('salesCount');
+        setInterval(() => {
+            salesCount += Math.floor(Math.random() * 3) + 1;
+            salesElement.textContent = salesCount;
+        }, 15000);
+
+        // User Counter
+        let userCount = 998;
+        const userElement = document.getElementById('userCount');
+        setInterval(() => {
+            userCount += Math.floor(Math.random() * 8) + 3;
+            userElement.textContent = userCount.toLocaleString('pt-BR');
+        }, 20000);
+
+        // Purchase Notifications
+        const names = ["João Silva", "Maria Santos", "Pedro Costa", "Ana", "Carlos Souza", "Juliana", "Rafael", "Camila"];
+        const products = ["☠️ Painel XIT Android", "☠️ Painel XIT iPhone", "👑 Painel CLT VIP"];
+        const cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Salvador", "Porto Alegre", "Curitiba", "Recife", "Fortaleza"];
+
+        function showNotification() {
+            const container = document.getElementById('notificationsContainer');
+            const notification = document.createElement('div');
+            notification.className = 'purchase-notification shimmer-effect';
+            
+            const name = names[Math.floor(Math.random() * names.length)];
+            const product = products[Math.floor(Math.random() * products.length)];
+            const city = cities[Math.floor(Math.random() * cities.length)];
+            
+            notification.innerHTML = `
+                <div class="content">
+                    <div class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                    </div>
+                    <div class="details">
+                        <p class="label">🔥 NOVA COMPRA!</p>
+                        <p class="product">${product}</p>
+                        <p class="info">${name} • ${city}</p>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('exiting');
+                setTimeout(() => notification.remove(), 500);
+            }, 5000);
+        }
+
+        // Initial notification after 3 seconds
+        setTimeout(showNotification, 3000);
+        
+        // Random notifications between 8-15 seconds
+        setInterval(() => {
+            showNotification();
+        }, Math.random() * 7000 + 8000);
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasOpen = item.classList.contains('open');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                
+                // Open clicked if it was closed
+                if (!wasOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+
+        // Logo - Update with your actual logo URL
+        // If you have the logo hosted somewhere, update this line:
+        // document.getElementById('heroLogo').src = 'YOUR_LOGO_URL';
+    </script>
 </body>
 </html>
